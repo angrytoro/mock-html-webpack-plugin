@@ -1,0 +1,33 @@
+{
+  "name": "mock-html-webpack-plugin",
+  "version": "0.1.1",
+  "description": "support mock for html when develop",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production babel src -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angrytoro/mock-html-webpack-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "mock",
+    "html-webpack-plugin"
+  ],
+  "author": "angrytoro@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angrytoro/mock-html-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/angrytoro/mock-html-webpack-plugin#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.4"
+  }
+}
