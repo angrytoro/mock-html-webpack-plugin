@@ -10,6 +10,14 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+var TYPE = {
+  freemarker: /\${([^\${}]+)}/g,
+  velocity: /\$!?{([^\$!{}]+)}/g,
+  mustache: /{{([^{}]+)}}/g,
+  smarty: /{([^{}]+)}/g,
+  jsp: /<%\=\s+([^<%\=>])%>/g
+};
+
 var MockHtml = function () {
   function MockHtml() {
     var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { data: {} };
@@ -22,7 +30,7 @@ var MockHtml = function () {
   _createClass(MockHtml, [{
     key: 'mock',
     value: function mock(tpl, data) {
-      return tpl.replace(/\${([^\${}]+)}/g, function ($0, $1) {
+      return tpl.replace(TYPE[this.options.type] || this.options.test || TYPE.freemarker, function ($0, $1) {
         return _typeof(data[$1]) === 'object' && data[$1] ? JSON.stringify(data[$1]) : data[$1];
       });
     }
