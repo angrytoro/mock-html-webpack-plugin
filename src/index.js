@@ -21,7 +21,9 @@ class MockHtml {
   apply (compiler) {
     compiler.plugin('compilation' , compilation => {
       compilation.plugin('html-webpack-plugin-before-html-processing', (data, cb)  => {
-        data.html = this.mock(data.html, this.options.data)
+        if (!this.options.template || this.options.template === data.outputName) {
+          data.html = this.mock(data.html, this.options.data)
+        }
         cb(null, data)
       })
     })

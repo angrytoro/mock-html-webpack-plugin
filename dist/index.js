@@ -41,7 +41,9 @@ var MockHtml = function () {
 
       compiler.plugin('compilation', function (compilation) {
         compilation.plugin('html-webpack-plugin-before-html-processing', function (data, cb) {
-          data.html = _this.mock(data.html, _this.options.data);
+          if (!_this.options.template || _this.options.template === data.outputName) {
+            data.html = _this.mock(data.html, _this.options.data);
+          }
           cb(null, data);
         });
       });

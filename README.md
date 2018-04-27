@@ -17,3 +17,5 @@ support mock for html base on html-webpack-plugin
 可支持之定义模板匹配规则
 ## data
 渲染模板的模拟数据
+## template
+模板名称（可选），要和html-webpack-plugin一致，主要是解决多页的情况

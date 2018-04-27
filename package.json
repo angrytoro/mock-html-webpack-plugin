@@ -1,6 +1,6 @@
 {
   "name": "mock-html-webpack-plugin",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "support mock for html when develop",
   "main": "dist/index.js",
   "files": [
